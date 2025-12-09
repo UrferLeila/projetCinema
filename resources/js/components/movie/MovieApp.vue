@@ -1,14 +1,25 @@
 <template>
   <div class="movie-program">
     <h2 class="title-small">Programme du jour</h2>
-    <div class="container image-container">
-      <div class="item" v-for="(movie, index) in movies" :key="index">
-        <img :src="movie.image" />
+
+    <div v-if="loading">
+      <p>Chargement des films…</p>
+    </div>
+
+    <div v-else-if="error">
+      <p>Erreur : {{ error }}</p>
+    </div>
+
+    <div class="container image-container" v-else>
+      <div class="item" v-for="movie in movies" :key="movie.id">
+        <img :src="movie.image" alt="Poster" />
         <div class="info">
-          <h3>{{ movie.date }}</h3>
-          <h3>{{ movie.time }}</h3>
+          <h3>{{ movie.titre }}</h3>
+          <h3>{{ movie.auteur }}</h3>
         </div>
-        <button class="btn-red reserved" @click="goToReservation">Réserver</button>
+        <button class="btn-red reserved" @click="goToReservation(movie.id)">
+          Réserver
+        </button>
       </div>
     </div>
   </div>
@@ -18,41 +29,32 @@
 export default {
   data() {
     return {
-      movies: [
-        {
-          image: "https://themonitormmc.com/wp-content/uploads/2021/01/twilight.jpg",
-          date: "02.12.2025",
-          time: "09h00",
-        },
-        {
-          image:
-            "https://2.bp.blogspot.com/-nFIkDeTR2y8/Td5xcLwz1hI/AAAAAAAAAFU/pVi-pZrqsyQ/s1600/Twilight_IllusCompan_CVR_FINAL.jpg",
-          date: "02.12.2025",
-          time: "09h00",
-        },
-        {
-          image:
-            "https://wallpapers.com/images/hd/jurassic-world-active-volcano-5az4as7ou6azluuj.jpg",
-          date: "02.12.2025",
-          time: "09h00",
-        },
-        {
-          image: "https://tse3.mm.bing.net/th/id/OIP.9nucBRZfBWPZoPAhI2wVrAHaJ4",
-          date: "02.12.2025",
-          time: "09h00",
-        },
-        {
-          image: "https://fr.web.img5.acsta.net/pictures/14/08/04/15/09/405662.jpg",
-          date: "02.12.2025",
-          time: "09h00",
-        },
-      ],
+      movies: [],
+      loading: true,
+      error: null,
     };
   },
   methods: {
-    goToReservation() {
-      this.$router.push("/reservation");
+    async refresh() {
+      try {
+        const response = await fetch("/film/all");
+        if (!response.ok) throw new Error("Impossible de charger les films");
+        const data = await response.json();
+        this.movies = data;
+      } catch (err) {
+        console.error(err);
+        this.error = err.message;
+      } finally {
+        this.loading = false;
+      }
     },
+
+    goToReservation(id) {
+      this.$router.push(`/reservation/${id}`);
+    },
+  },
+  mounted() {
+    this.refresh();
   },
 };
 </script>

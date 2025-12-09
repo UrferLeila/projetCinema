@@ -1,14 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TaskApiController;
+use App\Http\Controllers\FilmController;
 
+// API routes
+Route::get('film/all', [FilmController::class, 'index']);
+Route::apiResource('film', FilmController::class);
+
+// Catch-all pour Vue
 Route::get('/{any}', function () {
-    return view('movievue.index'); 
+    return view('movievue.index');
 })->where('any', '.*');
-Route::get('/', function () {
-    return view('welcome');
-});
-
-// API resource route
-Route::apiResource('film/all', TaskApiController::class);
