@@ -62,62 +62,62 @@
       <div class="seats-container-small">
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-2.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-2.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-2.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-2.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-2.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-2.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-2.svg.svg"
         />
       </div>
 
       <div class="seats-container-small">
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-2.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-2.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-2.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-2.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-2.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-2.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-2.svg.svg"
         />
       </div>
 
@@ -125,220 +125,220 @@
         <img
           class="svg"
           @click="handleClick"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-      </div>
-
-      <div class="seats-container">
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
       </div>
 
       <div class="seats-container">
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
       </div>
 
       <div class="seats-container">
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
         <img
           class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
+        />
+      </div>
+
+      <div class="seats-container">
+        <img
+          class="svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
+        />
+        <img
+          class="svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
+        />
+        <img
+          class="svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
+        />
+        <img
+          class="svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
+        />
+        <img
+          class="svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
+        />
+        <img
+          class="svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
+        />
+        <img
+          class="svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
+        />
+        <img
+          class="svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
+        />
+        <img
+          class="svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
+        />
+        <img
+          class="svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
+        />
+        <img
+          class="svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
+        />
+        <img
+          class="svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
+        />
+        <img
+          class="svg"
+          src="file:///C:/Users/cp-23gwc/Pictures/cinema-seat-1.svg.svg"
         />
       </div>
 
