@@ -14,40 +14,48 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
+
     public function run(): void
     {
         User::factory()->createMany([
             [
-            'name'  => 'Alice',
-            'email' => 'alice@ceff.ch',
-            'password' => '1234',
+                'name'  => 'Alice',
+                'email' => 'alice@ceff.ch',
+                'password' => '1234',
             ],
 
             [
-            'name'  => 'Bob',
-            'email' => 'bob@ceff.ch',
-            'password' => '1234',
+                'name'  => 'Bob',
+                'email' => 'bob@ceff.ch',
+                'password' => '1234',
             ],
         ]);
 
         Film::factory()->createMany([
             [
-                'titre'  => 'Inception',
-                'auteur' => 'Christopher Nolan',
-                'image'  => 'https://example.com/images/inception.jpg',
+                'titre'  => 'Twilight',
+                'auteur' => 'Stephenie Meyer',
+                'image'  => 'https://themonitormmc.com/wp-content/uploads/2021/01/twilight.jpg',
             ],
             [
-                'titre'  => 'Interstellar',
-                'auteur' => 'Christopher Nolan',
-                'image'  => 'https://example.com/images/interstellar.jpg',
+                'titre'  => "Harry Potter 2",
+                'auteur' => 'JK Rowling',
+                'image'  => 'https://th.bing.com/th/id/R.e9aa800e8632e5ba3e269369bb4d1c3b?rik=8q%2bHZf4iMdS%2fIw&pid=ImgRaw&r=0',
             ],
             [
-                'titre'  => 'The Dark Knight',
-                'auteur' => 'Christopher Nolan',
-                'image'  => 'https://example.com/images/dark-knight.jpg',
+                'titre'  => 'Jurassic world Rebith',
+                'auteur' => 'Gareth Edwards',
+                'image'  => 'https://m.media-amazon.com/images/S/pv-target-images/414f6b00ca574fdc273a693daffd721abc71c5ee49b28253853916ddbd550a69.jpg',
+            ],
+            [
+                'titre'  => 'Avatar',
+                'auteur' => 'James Cameron',
+                'image'  => 'https://tse2.mm.bing.net/th/id/OIP.59n-h-SQ_q3TqBkgXbsEeAHaLH?rs=1&pid=ImgDetMain&o=7&rm=3',
+            ],
+            [
+                'titre'  => 'Les gardien de la galaxie',
+                'auteur' => 'Jsp',
+                'image'  => 'https://fr.web.img5.acsta.net/pictures/14/08/04/15/09/405662.jpg',
             ],
         ]);
 
