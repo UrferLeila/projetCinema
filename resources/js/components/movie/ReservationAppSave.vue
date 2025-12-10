@@ -17,7 +17,11 @@
       <h3 class="h3">{{ movie.titre }}</h3>
 
       <h2 class="h2-title">Date et Horaire</h2>
-      <h3 class="h3">Mardi, 02.12.2025, 17h15</h3>
+      <h3 class="h3" v-if="selectedSeance">
+        {{ formatSeance(selectedSeance) }}
+      </h3>
+
+      <h3 class="h3" v-else>Sélectionnez une séance</h3>
 
       <button class="btn-red">Réserver</button>
     </div>
@@ -25,16 +29,15 @@
     <div class="selection-column">
       <h1 class="h1-center">Date</h1>
       <div class="header-center">
-        <button v-for="(seance, index) in seances" :key="index" class="btn">
-          {{ new Date(seance.date).toLocaleDateString("fr-CH") }}
+        <button
+          v-for="(seance, index) in seances"
+          :key="index"
+          class="btn"
+          @click="selectedSeance = seance"
+        >
+          {{ new Date(seance.date).toLocaleDateString("fr-CH") }} : {{ seance.heure }}
         </button>
       </div>
-
-      <h1 class="h1-center">Heure</h1>
-      <div class="header-center"></div>
-      <button v-for="(seance, index) in seances" :key="index" class="btn">
-        {{ seance.heure }}
-      </button>
     </div>
 
     <div class="seats-wrapper">
@@ -156,15 +159,26 @@ export default {
       loading: true,
       error: null,
       seances: [],
+      selectedSeance: null,
     };
+  },
+  methods: {
+    formatSeance(seance) {
+      const date = new Date(seance.date).toLocaleDateString("fr-CH", {
+        weekday: "long",
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      });
+
+      return `${date}, ${seance.heure}`;
+    },
   },
   async mounted() {
     try {
       const response = await fetch(`/film/${this.id}`);
       if (!response.ok) throw new Error("Impossible de charger le film");
-
       const data = await response.json();
-
       this.movie = data;
       this.seances = data.seances || [];
     } catch (err) {

@@ -49,6 +49,22 @@ body {
     font-weight: bold;
 }
 
+.selection-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.header-center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+}
+
 .btn {
     height: 40px;
     width: 160px;
@@ -62,6 +78,7 @@ body {
     color: white;
     justify-content: center;
     align-items: center;
+    display: flex
 }
 
 .btn:hover {
@@ -135,7 +152,7 @@ body {
 .header-container {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     gap: 30px;
     margin: 50px;
     flex-wrap: wrap;
