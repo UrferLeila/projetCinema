@@ -19,7 +19,6 @@ class SeanceFactory extends Factory
      */
     public function definition(): array
     {
-
         return [
             'date' => $this->faker->date(), 
             'heure' => $this->faker->time(),     
