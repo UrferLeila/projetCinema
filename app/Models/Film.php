@@ -14,4 +14,9 @@ class Film extends Model
         'auteur',
         'image',
     ];
+
+    public function seances()
+    {
+        return $this->hasMany(Seance::class);
+    }
 }

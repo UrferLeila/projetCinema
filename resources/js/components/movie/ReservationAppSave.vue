@@ -17,25 +17,26 @@
       <h3 class="h3">{{ movie.titre }}</h3>
 
       <h2 class="h2-title">Date et Horaire</h2>
-      <h3 class="h3">Mardi, 02.12.2025, 17h15</h3>
+      <h3 class="h3" v-if="selectedSeance">
+        {{ formatSeance(selectedSeance) }}
+      </h3>
 
-      <button class="btn-red reserved">Réserver</button>
+      <h3 class="h3" v-else>Sélectionnez une séance</h3>
+
+      <button class="btn-red">Réserver</button>
     </div>
 
     <div class="selection-column">
       <h1 class="h1-center">Date</h1>
       <div class="header-center">
-        <button class="btn reserved">Jeudi 4 décembre</button>
-        <button class="btn reserved">Samedi 6 décembre</button>
-        <button class="btn reserved">Lundi 8 décembre</button>
-      </div>
-
-      <h1 class="h1-center">Heure</h1>
-      <div class="header-center">
-        <button class="btn reserved">13h30</button>
-        <button class="btn reserved">15h20</button>
-        <button class="btn reserved">17h00</button>
-        <button class="btn reserved">20h30</button>
+        <button
+          v-for="(seance, index) in seances"
+          :key="index"
+          class="btn"
+          @click="selectedSeance = seance"
+        >
+          {{ new Date(seance.date).toLocaleDateString("fr-CH") }} : {{ seance.heure }}
+        </button>
       </div>
     </div>
 
@@ -60,286 +61,87 @@
       </div>
 
       <div class="seats-container-small">
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
-        />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg" />
       </div>
 
       <div class="seats-container-small">
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg"
-        />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-2.svg.svg" />
       </div>
 
       <div class="seats-container">
-        <img
-          class="svg"
-          @click="handleClick"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
       </div>
 
       <div class="seats-container">
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
       </div>
 
       <div class="seats-container">
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
       </div>
 
       <div class="seats-container">
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
-        <img
-          class="svg"
-          src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg"
-        />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
+        <img class="svg" src="file:///C:/Users/cp-23leu/Pictures/cinema-seat-1.svg.svg" />
       </div>
 
       <div><h1 class="h1-center">Écran</h1></div>
@@ -356,12 +158,21 @@ export default {
       movie: null,
       loading: true,
       error: null,
+      seances: [],
+      selectedSeance: null,
     };
   },
   methods: {
-    handleClick() {
-      this.isSelected = !this.isSelected
-    }
+    formatSeance(seance) {
+      const date = new Date(seance.date).toLocaleDateString("fr-CH", {
+        weekday: "long",
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      });
+
+      return `${date}, ${seance.heure}`;
+    },
   },
   async mounted() {
     try {
@@ -369,6 +180,7 @@ export default {
       if (!response.ok) throw new Error("Impossible de charger le film");
       const data = await response.json();
       this.movie = data;
+      this.seances = data.seances || [];
     } catch (err) {
       console.error(err);
       this.error = err.message;

@@ -15,9 +15,9 @@ class FilmFactory extends Factory
     public function definition(): array
     {
         return [
-            'titre' => $this->faker->sentence(3), // random title
-            'auteur' => $this->faker->name(),     // random author/director
-            'image' => $this->faker->imageUrl(),  // random image URL
+            'titre' => $this->faker->sentence(3), 
+            'auteur' => $this->faker->name(),     
+            'image' => $this->faker->imageUrl(),  
         ];
     }
 }
