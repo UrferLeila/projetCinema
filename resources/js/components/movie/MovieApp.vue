@@ -12,12 +12,12 @@
 
     <div class="container image-container" v-else>
       <div class="item" v-for="movie in movies" :key="movie.id">
-        <img :src="movie.image" alt="Poster" />
+        <img :src="movie.image"/>
         <div class="info">
           <h3>{{ movie.titre }}</h3>
           <h3>{{ movie.auteur }}</h3>
         </div>
-        <button class="btn-red reserved" @click="goToReservation(movie.id)">
+        <button class="btn-red" @click="goToReservation(movie.id)">
           Réserver
         </button>
       </div>

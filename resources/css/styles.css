@@ -51,6 +51,22 @@ body {
 }
 
 /* BUTTONS */
+.selection-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.header-center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+}
+
 .btn {
     height: 40px;
     width: 160px;
@@ -60,14 +76,20 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.btn.reserved {
     background-color: #0d3961;
     color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex
 }
 
-.btn.reserved:hover {
+.btn.selected {
+    background-color: white;
+    color: black;
+}
+
+
+.btn:hover {
     background-color: #4b8ecc;
     transform: scale(1.05);
 }
@@ -89,15 +111,14 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.btn-red.reserved {
     background-color: rgb(207, 42, 42);
     color: white;
     margin-top: 20px;
 }
 
 .btn-red.reserved:hover {
+.btn-red:hover {
+    background-color: rgb(207, 42, 42);
     transform: scale(1.05);
 }
 
@@ -148,7 +169,7 @@ body {
 .header-container {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     gap: 30px;
     margin: 50px;
     flex-wrap: wrap;
@@ -219,6 +240,13 @@ body {
     align-items: center;
     gap: 25px;
     width: 100%;
+.seats-container {
+    display: grid;
+    grid-template-columns: repeat(13, 50px);
+    grid-gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 8px;
 }
 
 /* Each row (VIP or normal row) → now a grid of squares */

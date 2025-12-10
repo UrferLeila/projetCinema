@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Seeders;
-
 use App\Models\User;
 use App\Models\Film;
 use App\Models\Seance;
@@ -69,20 +68,96 @@ class DatabaseSeeder extends Seeder
             [
                 'date'    => '2026-01-04',
                 'heure'   => '11:30',
-                'salle_id'   => 1,
+                'salle_id' => 1,
                 'film_id' => 1,
             ],
             [
                 'date'    => '2026-01-04',
                 'heure'   => '15:30',
-                'salle_id'   => 1,
+                'salle_id' => 1,
                 'film_id' => 1,
             ],
             [
+                'date'    => '2026-01-06',
+                'heure'   => '18:00',
+                'salle_id' => 1,
+                'film_id' => 1,
+            ],
+
+            [
                 'date'    => '2026-02-15',
                 'heure'   => '13:30',
-                'salle_id'   => 1,
+                'salle_id' => 1,
                 'film_id' => 2,
+            ],
+            [
+                'date'    => '2026-02-15',
+                'heure'   => '17:00',
+                'salle_id' => 1,
+                'film_id' => 2,
+            ],
+            [
+                'date'    => '2026-02-17',
+                'heure'   => '20:00',
+                'salle_id' => 1,
+                'film_id' => 2,
+            ],
+
+            [
+                'date'    => '2026-03-10',
+                'heure'   => '12:45',
+                'salle_id' => 1,
+                'film_id' => 3,
+            ],
+            [
+                'date'    => '2026-03-10',
+                'heure'   => '16:15',
+                'salle_id' => 1,
+                'film_id' => 3,
+            ],
+            [
+                'date'    => '2026-03-12',
+                'heure'   => '19:30',
+                'salle_id' => 1,
+                'film_id' => 3,
+            ],
+
+            [
+                'date'    => '2026-04-02',
+                'heure'   => '10:00',
+                'salle_id' => 1,
+                'film_id' => 4,
+            ],
+            [
+                'date'    => '2026-04-02',
+                'heure'   => '14:00',
+                'salle_id' => 1,
+                'film_id' => 4,
+            ],
+            [
+                'date'    => '2026-04-04',
+                'heure'   => '18:45',
+                'salle_id' => 1,
+                'film_id' => 4,
+            ],
+
+            [
+                'date'    => '2026-05-21',
+                'heure'   => '11:00',
+                'salle_id' => 1,
+                'film_id' => 5,
+            ],
+            [
+                'date'    => '2026-05-21',
+                'heure'   => '15:00',
+                'salle_id' => 1,
+                'film_id' => 5,
+            ],
+            [
+                'date'    => '2026-05-23',
+                'heure'   => '20:30',
+                'salle_id' => 1,
+                'film_id' => 5,
             ],
         ]);  
 
