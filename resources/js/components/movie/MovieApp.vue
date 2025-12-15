@@ -40,7 +40,6 @@ export default {
         const data = await response.json();
         this.movies = data;
       } catch (err) {
-        console.error(err);
         this.error = err.message;
       } finally {
         this.loading = false;
@@ -51,6 +50,7 @@ export default {
       this.$router.push(`/reservation/${id}`);
     },
   },
+
   mounted() {
     this.refresh();
   },

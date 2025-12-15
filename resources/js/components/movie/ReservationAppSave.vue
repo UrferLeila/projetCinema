@@ -19,7 +19,7 @@
       <button class="btn-red" @click="openConnection">Réserver</button>
     </div>
     <div class="selection-column">
-      <h1 class="h1-center">Choisir la séance :</h1>
+      <h1 class="h1-center">Choisir la séance</h1>
       <div class="header-center">
         <button
           v-for="(seance, index) in seances"
@@ -37,11 +37,11 @@
       <div class="legend-container">
         <div class="legend-item">
           <div class="color normal"></div>
-          <span>Normal</span>
+          <span>Normal (20 CHF)</span>
         </div>
         <div class="legend-item">
           <div class="color vip"></div>
-          <span>VIP</span>
+          <span>VIP (45 CHF)</span>
         </div>
         <div class="legend-item">
           <div class="color selected"></div>
@@ -80,19 +80,19 @@
   </div>
 
   <Connection
-    v-if="showLoginModal"
+    v-if="showConnection"
     :login="login"
-    @close="closeLoginModal"
+    @close="closeConnection"
     @submit="loginUser"
-    @open-register="openRegisterModal"
+    @open-register="openRegister"
   />
 
   <Register
-    v-if="showRegisterModal"
+    v-if="showRegister"
     :login="loginRegister"
-    @close="closeRegisterModal"
+    @close="closeRegister"
     @submit="registerUser"
-    @open-login="openConnection"
+    @open-connection="openConnection"
   />
 </template>
 
@@ -117,8 +117,8 @@ export default {
       selectedSeats: [],
       seances: [],
       selectedSeance: null,
-      showLoginModal: false,
-      showRegisterModal: false,
+      showConnection: false,
+      showRegister: false,
       login: {
         email: "",
         password: "",
@@ -143,7 +143,6 @@ export default {
             seat.occupied = true;
           }
         });
-
         this.organizeSeats();
       } catch (error) {
         console.error("Failed to load occupied seats:", error);
@@ -161,9 +160,7 @@ export default {
         alert("Veuillez sélectionner une séance avant de choisir un siège.");
         return;
       }
-
       if (seat.occupied) return;
-
       if (this.selectedSeats.includes(seat.nom)) {
         this.selectedSeats = this.selectedSeats.filter((id) => id !== seat.nom);
       } else {
@@ -174,13 +171,10 @@ export default {
     organizeSeats() {
       const vipSeats = this.seats.filter((s) => s.prix?.type === "vip");
       const normalSeats = this.seats.filter((s) => s.prix?.type !== "vip");
-
       this.seatRows = [];
-
       for (let i = 0; i < vipSeats.length; i += 7) {
         this.seatRows.push(vipSeats.slice(i, i + 7));
       }
-
       for (let i = 0; i < normalSeats.length; i += 13) {
         this.seatRows.push(normalSeats.slice(i, i + 13));
       }
@@ -193,38 +187,37 @@ export default {
         month: "2-digit",
         year: "numeric",
       });
-
       return `${date}, ${seance.heure}`;
     },
 
     openConnection() {
-      this.showLoginModal = true;
-      this.showRegisterModal = false;
+      this.showConnection = true;
+      this.showRegister = false;
     },
 
-    closeLoginModal() {
-      this.showLoginModal = false;
+    closeConnection() {
+      this.showConnection = false;
     },
 
-    openRegisterModal() {
-      this.showLoginModal = false;
-      this.showRegisterModal = true;
+    openRegister() {
+      this.showConnection = false;
+      this.showRegister = true;
     },
 
-    closeRegisterModal() {
-      this.showRegisterModal = false;
+    closeRegister() {
+      this.showRegister = false;
     },
 
     loginUser(credentials) {
       console.log("Connexion avec :", credentials);
       this.login = credentials;
-      this.showLoginModal = false;
+      this.showConnection = false;
     },
 
     registerUser(credentials) {
       console.log("Inscription avec :", credentials);
       this.login = credentials;
-      this.showRegisterModal = false;
+      this.showRegister = false;
     },
   },
 

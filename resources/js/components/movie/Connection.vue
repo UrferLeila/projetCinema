@@ -9,13 +9,9 @@
         v-model="localLogin.password"
         class="input"
       />
-
       <h3 class="h3-center">Vous n'avez pas encore de compte ?</h3>
       <h3 class="link" @click="openRegister">Inscrivez-vous ici</h3>
-
-      <p v-if="connected" class="success-msg">Vous êtes connecté !</p>
       <p v-if="errorMsg" class="error-msg">{{ errorMsg }}</p>
-
       <div class="modal-actions">
         <button class="btn-red" @click="loginUser">Connexion</button>
         <button class="btn-red" @click="$emit('close')">Annuler</button>
@@ -26,7 +22,6 @@
 
 <script>
 import axios from "axios";
-
 export default {
   data() {
     return {
@@ -34,7 +29,6 @@ export default {
         email: "",
         password: "",
       },
-      connected: false,
       errorMsg: "",
     };
   },
@@ -42,19 +36,17 @@ export default {
     openRegister() {
       this.$emit("open-register");
     },
+
     async loginUser() {
       try {
-        const response = await axios.post("/api/login", this.localLogin);
+        const response = await axios.post("/connection", this.localLogin); //Problème ici
         if (response.data.success) {
-          this.connected = true;
           this.errorMsg = "";
           this.$emit("login-success", response.data.user);
         } else {
-          this.connected = false;
           this.errorMsg = response.data.message;
         }
       } catch (error) {
-        this.connected = false;
         this.errorMsg = "Une erreur est survenue, veuillez réessayer.";
       }
     },

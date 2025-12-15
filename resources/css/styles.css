@@ -222,7 +222,7 @@ body {
 }
 
 .color.occupied {
-    background-color: #f02424;
+    background-color: #5a5a5a;
 }
 
 .color.vip {
@@ -272,7 +272,7 @@ body {
 }
 
 .seat.occupied {
-    background: #f02424;
+    background: #5a5a5a;
     cursor: not-allowed;
 }
 
