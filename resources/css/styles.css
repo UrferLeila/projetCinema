@@ -29,7 +29,6 @@ body {
 .h2-title {
     color: white;
     font-size: 24px;
-    margin: 10px 0 5px 0;
     font-weight: 500;
 }
 
@@ -43,7 +42,6 @@ body {
 .h3-center {
     color: #ffffff;
     font-size: 16px;
-    margin: 20px 0 0 0;
     font-weight: 400;
     text-align: center;
 
@@ -325,4 +323,41 @@ body {
     text-align: center;
     margin-top: 10px;
     font-weight: bold;
+}
+
+.details-modal {
+    width: 380px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.details-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.label {
+    color: #a3a3a3;
+    font-size: 18px;
+}
+
+.value {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 18px;
+    color: white;
 }
