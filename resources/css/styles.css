@@ -6,9 +6,16 @@ body {
 }
 
 .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #1f1f1f;
     padding: 1rem 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-actions {
+    display: flex;
+    gap: 1rem;
 }
 
 .h1 {
@@ -91,6 +98,16 @@ body {
     justify-content: center;
     align-items: center;
     display: flex
+}
+
+.btn-login {
+    background-color: #2563eb;
+    color: white;
+}
+
+.btn-register {
+    background-color: #16a34a;
+    color: white;
 }
 
 .btn.selected {

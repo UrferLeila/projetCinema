@@ -51,9 +51,9 @@ class DatabaseSeeder extends Seeder
                 'image'  => 'https://tse2.mm.bing.net/th/id/OIP.59n-h-SQ_q3TqBkgXbsEeAHaLH?rs=1&pid=ImgDetMain&o=7&rm=3',
             ],
             [
-                'titre'  => 'Les gardien de la galaxie',
-                'auteur' => 'Jsp',
-                'image'  => 'https://fr.web.img5.acsta.net/pictures/14/08/04/15/09/405662.jpg',
+                'titre'  => 'Demon Slayer',
+                'auteur' => 'Koyoharu Gotōge',
+                'image'  => 'https://th.bing.com/th/id/R.941ea5309720a308cb5349931db87199?rik=c9VMk1GCxATPlg&riu=http%3a%2f%2fbreakforbuzz.com%2fwp-content%2fuploads%2f2025%2f03%2fDemon-Slayer-La-Forteresse-Infinie.jpg&ehk=W1EnvEopwsjg2kfgCWrpLBknRCkbzEzRhs2f0o%2bcCfY%3d&risl=&pid=ImgRaw&r=0',
             ],
         ]);
 
