@@ -17,8 +17,7 @@
       <h3 class="h3" v-if="selectedSeance">{{ formatSeance(selectedSeance) }}</h3>
       <h3 class="h3" v-else>Sélectionnez une séance</h3>
 
-      <button class="btn-red" v-if="isAuth" @click="openConnection">Réserver</button>
-      <button class="btn-red" v-else="isAuth" @click="openConnection">Réserver</button>
+      <button class="btn-red" @click="openConnection">Réserver</button>
     </div>
     <div class="selection-column">
       <h1 class="h1-center">Choisir la séance</h1>
@@ -86,6 +85,7 @@
 
 <script>
 import Details from "@/components/movie/Details.vue";
+import { list } from "postcss";
 
 export default {
   props: ["id"],
@@ -180,6 +180,11 @@ export default {
     },
 
     openConnection() {
+      if (!this.selectedSeance || this.selectedSeats.length === 0) {
+        alert("Veuillez sélectionner au moins une séance et un siège.");
+        return;
+      }
+
       if (this.isAuth) {
         this.showDetails = true;
       } else {

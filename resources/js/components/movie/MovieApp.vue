@@ -3,7 +3,7 @@
     <h2 class="title-small">Programme du jour</h2>
 
     <div v-if="loading">
-      <p>Chargement des films…</p>
+      <p class="title-small">Chargement des films…</p>
     </div>
 
     <div v-else-if="error">
