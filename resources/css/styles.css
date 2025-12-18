@@ -1,3 +1,4 @@
+/* ======================== General Styles ======================== */
 body {
     margin: 0;
     padding: 0;
@@ -5,17 +6,10 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1f1f1f;
-    padding: 1rem 2rem;
-}
-
-.navbar-actions {
-    display: flex;
-    gap: 1rem;
+h1,
+h2,
+h3 {
+    margin: 0;
 }
 
 .h1 {
@@ -46,7 +40,6 @@ body {
     color: #ffffff;
     font-size: 16px;
     text-align: center;
-
 }
 
 .link {
@@ -68,22 +61,21 @@ body {
     font-weight: bold;
 }
 
-.selection-column {
+/* ======================== Navbar ======================== */
+.navbar {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
-
+    background-color: #1f1f1f;
+    padding: 1rem 2rem;
 }
 
-.header-center {
+.navbar-actions {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    width: 100%;
+    gap: 1rem;
 }
 
+/* ======================== Buttons ======================== */
 .btn {
     height: 40px;
     width: 160px;
@@ -97,7 +89,7 @@ body {
     color: white;
     justify-content: center;
     align-items: center;
-    display: flex
+    display: flex;
 }
 
 .btn.selected {
@@ -108,14 +100,6 @@ body {
 .btn:hover {
     background-color: #12599b;
     transform: scale(1.05);
-}
-
-.image-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    padding: 40px 20px;
 }
 
 .btn-red {
@@ -133,12 +117,48 @@ body {
     text-decoration: none;
 }
 
-
 .btn-red:hover {
     background-color: rgb(207, 42, 42);
     transform: scale(1.05);
 }
 
+/* ======================== Dropdown ======================== */
+.dropdown-toggle::after {
+    margin-left: 0.5rem;
+    color: white;
+}
+
+/* Dropdown hidden by default */
+.dropdown-menu {
+    display: none;
+    background-color: #1f1f1f;
+    border: none;
+    min-width: 160px;
+    padding: 0.5rem 0;
+    border-radius: 0.25rem;
+}
+
+/* Show dropdown when Bootstrap JS toggles 'show' */
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-item {
+    color: white;
+    padding: 0.25rem 1.5rem;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+.dropdown-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ======================== Items / Cards ======================== */
 .item {
     display: flex;
     flex-direction: column;
@@ -172,6 +192,7 @@ body {
     color: white;
 }
 
+/* ======================== Layout Helpers ======================== */
 .header-container {
     display: flex;
     flex-direction: row;
@@ -182,53 +203,15 @@ body {
     justify-content: center;
 }
 
-.poster-square {
-    width: 250px;
-    height: 360px;
-    background: #1d1d1d;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.legend-container {
+.header-center {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
     flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
 }
 
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 16px;
-    color: white;
-}
-
-.color {
-    width: 20px;
-    height: 20px;
-    border-radius: 5px;
-}
-
-.color.normal {
-    background-color: #d0d0d0;
-}
-
-.color.selected {
-    background-color: #00ff62;
-}
-
-.color.occupied {
-    background-color: #5a5a5a;
-}
-
-.color.vip {
-    background-color: #f6ff00;
-}
-
-
+/* ======================== Seats ======================== */
 .seats-wrapper {
     display: flex;
     flex-direction: column;
@@ -279,6 +262,7 @@ body {
     background: #00ff62;
 }
 
+/* ======================== Modal ======================== */
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -326,6 +310,7 @@ body {
     font-weight: bold;
 }
 
+/* ======================== Misc ======================== */
 .details-modal {
     width: 380px;
 }
@@ -362,21 +347,58 @@ body {
     color: white;
 }
 
-.dropdown-toggle::after {
-    margin-left: 0.5rem;
+/* ======================== Legends ======================== */
+.legend-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
 }
 
-/* Optional: make dropdown items match your theme */
-.dropdown-menu {
-    background-color: #1f1f1f;
-    border: none;
-}
-
-.dropdown-item {
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
     color: white;
 }
 
-.dropdown-item:hover {
-    background-color: #2563eb;
-    color: white;
+.color {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.color.normal {
+    background-color: #d0d0d0;
+}
+
+.color.selected {
+    background-color: #00ff62;
+}
+
+.color.occupied {
+    background-color: #5a5a5a;
+}
+
+.color.vip {
+    background-color: #f6ff00;
+}
+
+/* ======================== Image / Poster ======================== */
+.poster-square {
+    width: 250px;
+    height: 360px;
+    background: #1d1d1d;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
 }

@@ -8,6 +8,7 @@
   </div>
 
   <div class="header-container" v-else>
+    <!-- Movie Info -->
     <img class="poster-square" :src="movie.image" />
     <div>
       <h1 class="h1">Choisir une place</h1>
@@ -19,6 +20,8 @@
 
       <button class="btn-red" @click="openConnection">Réserver</button>
     </div>
+
+    <!-- Seance Selection -->
     <div class="selection-column">
       <h1 class="h1-center">Choisir la séance</h1>
       <div class="header-center">
@@ -34,7 +37,9 @@
       </div>
     </div>
 
+    <!-- Seats Layout -->
     <div class="seats-wrapper">
+      <!-- Legend -->
       <div class="legend-container">
         <div class="legend-item">
           <div class="color normal"></div>
@@ -54,6 +59,7 @@
         </div>
       </div>
 
+      <!-- Seat Rows -->
       <div
         v-for="(row, rowIndex) in seatRows"
         :key="rowIndex"
@@ -70,7 +76,7 @@
             vip: seat.prix?.type === 'vip',
             normal: seat.prix?.type !== 'vip',
             occupied: seat.occupied,
-            selected: selectedSeats.includes(seat.nom),
+            selected: selectedSeats.some(s => s.nom === seat.nom),
           }"
           @click="toggleSeat(seat)"
         ></div>
@@ -80,19 +86,24 @@
     </div>
   </div>
 
-  <Details v-if="showDetails" @close="closeAll" />
+  <!-- Details Modal -->
+  <Details
+    v-if="showDetails"
+    @close="closeAll"
+    :selectedMovie="movie"
+    :selectedSeance="getSeanceString(selectedSeance)"
+    :selectedSeats="selectedSeats"
+  />
 </template>
 
 <script>
 import Details from "@/components/movie/Details.vue";
-import { list } from "postcss";
 
 export default {
   props: ["id"],
   components: {
     Details,
   },
-
   data() {
     return {
       isAuth: false,
@@ -107,69 +118,10 @@ export default {
       showDetails: false,
     };
   },
-
   methods: {
-    async loadIsAuth() {
-      try {
-        const response = await fetch("/api/isAuth");
-        if (!response.ok) throw new Error("Impossible d'obtenir le statue de connection");
-        const data = await response.json();
-        this.isAuth = data;
-      } catch (err) {
-        this.error = err.message;
-      } finally {
-        this.loading = false;
-      }
-    },
-
-    async loadOccupiedSeats(seanceId) {
-      try {
-        const res = await fetch(`/seance/${seanceId}/occupied`);
-        const occupied = await res.json();
-        this.seats.forEach((seat) => (seat.occupied = false));
-        this.seats.forEach((seat) => {
-          if (occupied.includes(seat.nom)) {
-            seat.occupied = true;
-          }
-        });
-        this.organizeSeats();
-      } catch (error) {
-        console.error("Failed to load occupied seats:", error);
-      }
-    },
-
-    selectSeance(seance) {
-      this.selectedSeance = seance;
-      this.selectedSeats = [];
-      this.loadOccupiedSeats(seance.id);
-    },
-
-    toggleSeat(seat) {
-      if (!this.selectedSeance) {
-        alert("Veuillez sélectionner une séance avant de choisir un siège.");
-        return;
-      }
-      if (seat.occupied) return;
-      if (this.selectedSeats.includes(seat.nom)) {
-        this.selectedSeats = this.selectedSeats.filter((id) => id !== seat.nom);
-      } else {
-        this.selectedSeats.push(seat.nom);
-      }
-    },
-
-    organizeSeats() {
-      const vipSeats = this.seats.filter((s) => s.prix?.type === "vip");
-      const normalSeats = this.seats.filter((s) => s.prix?.type !== "vip");
-      this.seatRows = [];
-      for (let i = 0; i < vipSeats.length; i += 7) {
-        this.seatRows.push(vipSeats.slice(i, i + 7));
-      }
-      for (let i = 0; i < normalSeats.length; i += 13) {
-        this.seatRows.push(normalSeats.slice(i, i + 13));
-      }
-    },
-
+    // Format seance for display
     formatSeance(seance) {
+      if (!seance) return "";
       const date = new Date(seance.date).toLocaleDateString("fr-CH", {
         weekday: "long",
         day: "2-digit",
@@ -179,6 +131,77 @@ export default {
       return `${date}, ${seance.heure}`;
     },
 
+    // Returns string for Details modal
+    getSeanceString(seance) {
+      if (!seance) return "";
+      return this.formatSeance(seance);
+    },
+
+    // Load authentication status
+    async loadIsAuth() {
+      try {
+        const response = await fetch("/api/isAuth");
+        if (!response.ok) throw new Error("Impossible d'obtenir le statut de connexion");
+        const data = await response.json();
+        this.isAuth = data;
+      } catch (err) {
+        this.error = err.message;
+      }
+    },
+
+    // Load occupied seats for selected seance
+    async loadOccupiedSeats(seanceId) {
+      try {
+        const res = await fetch(`/seance/${seanceId}/occupied`);
+        const occupied = await res.json();
+        this.seats.forEach((seat) => (seat.occupied = false));
+        this.seats.forEach((seat) => {
+          if (occupied.includes(seat.nom)) seat.occupied = true;
+        });
+        this.organizeSeats();
+      } catch (err) {
+        console.error("Failed to load occupied seats:", err);
+      }
+    },
+
+    // When user selects a seance
+    selectSeance(seance) {
+      this.selectedSeance = seance;
+      this.selectedSeats = [];
+      this.loadOccupiedSeats(seance.id);
+    },
+
+    // Toggle seat selection
+    toggleSeat(seat) {
+      if (!this.selectedSeance) {
+        alert("Veuillez sélectionner une séance avant de choisir un siège.");
+        return;
+      }
+      if (seat.occupied) return;
+
+      const index = this.selectedSeats.findIndex((s) => s.nom === seat.nom);
+      if (index !== -1) {
+        this.selectedSeats.splice(index, 1); // Remove seat
+      } else {
+        this.selectedSeats.push(seat); // Add full seat object
+      }
+    },
+
+    // Organize seats into rows for display
+    organizeSeats() {
+      const vipSeats = this.seats.filter((s) => s.prix?.type === "vip");
+      const normalSeats = this.seats.filter((s) => s.prix?.type !== "vip");
+      this.seatRows = [];
+
+      for (let i = 0; i < vipSeats.length; i += 7) {
+        this.seatRows.push(vipSeats.slice(i, i + 7));
+      }
+      for (let i = 0; i < normalSeats.length; i += 13) {
+        this.seatRows.push(normalSeats.slice(i, i + 13));
+      }
+    },
+
+    // Open Details modal
     openConnection() {
       if (!this.selectedSeance || this.selectedSeats.length === 0) {
         alert("Veuillez sélectionner au moins une séance et un siège.");
@@ -192,11 +215,6 @@ export default {
       }
     },
 
-    openDetails() {
-      this.closeAll();
-      this.showDetails = true;
-    },
-
     closeAll() {
       this.showDetails = false;
     },
@@ -205,13 +223,13 @@ export default {
   async mounted() {
     this.loading = true;
     try {
-      // Load seats
-      const seatsRes = await fetch(`/siege`);
+      // Load all seats
+      const seatsRes = await fetch("/siege");
       if (!seatsRes.ok) throw new Error("Impossible de charger les sièges");
       this.seats = await seatsRes.json();
       this.organizeSeats();
 
-      // Load film
+      // Load movie
       const filmRes = await fetch(`/film/${this.id}`);
       if (!filmRes.ok) throw new Error("Impossible de charger le film");
       const filmData = await filmRes.json();
