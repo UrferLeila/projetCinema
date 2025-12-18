@@ -76,7 +76,7 @@
             vip: seat.prix?.type === 'vip',
             normal: seat.prix?.type !== 'vip',
             occupied: seat.occupied,
-            selected: selectedSeats.some(s => s.nom === seat.nom),
+            selected: selectedSeats.some((s) => s.nom === seat.nom),
           }"
           @click="toggleSeat(seat)"
         ></div>
@@ -90,8 +90,9 @@
   <Details
     v-if="showDetails"
     @close="closeAll"
+    @reservation-made="refreshSeats"
     :selectedMovie="movie"
-    :selectedSeance="getSeanceString(selectedSeance)"
+    :selectedSeance="selectedSeance"
     :selectedSeats="selectedSeats"
   />
 </template>
@@ -118,7 +119,13 @@ export default {
       showDetails: false,
     };
   },
+
   methods: {
+    refreshSeats() {
+      this.loadOccupiedSeats(this.selectedSeance.id);
+      this.selectedSeats = []; // clear selected seats
+    },
+
     // Format seance for display
     formatSeance(seance) {
       if (!seance) return "";
@@ -129,12 +136,6 @@ export default {
         year: "numeric",
       });
       return `${date}, ${seance.heure}`;
-    },
-
-    // Returns string for Details modal
-    getSeanceString(seance) {
-      if (!seance) return "";
-      return this.formatSeance(seance);
     },
 
     // Load authentication status

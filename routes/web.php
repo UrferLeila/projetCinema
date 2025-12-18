@@ -7,10 +7,12 @@ use App\Http\Controllers\SiegeController;
 use App\Http\Controllers\ReservationSiegeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\IsAuthController;
+use App\Http\Controllers\ReservationController;
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -35,6 +37,15 @@ Route::apiResource('seance', SeanceController::class);
 
 Route::get('siege/all', [SiegeController::class, 'index']);
 Route::apiResource('siege', SiegeController::class);
+
+// routes/web.php or api.php
+Route::middleware('auth')->post('/reservations', [ReservationController::class, 'store']);
+Route::middleware('auth')->get('/reservations', [ReservationController::class, 'index']);
+
+Route::middleware('auth')->get('/reservations/{id}', [ReservationController::class, 'show']);
+Route::middleware('auth')->delete('/reservations/{id}', [ReservationController::class, 'destroy']);
+
+
 
 Route::get('reservationSiege/all', [ReservationSiegeController::class, 'index']);
 Route::apiResource('reservationSiege', ReservationSiegeController::class);
