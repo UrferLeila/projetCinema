@@ -1,6 +1,6 @@
 <template>
   <div class="movie-program">
-    <h2 class="title-small">Programme du jour</h2>
+    <h2 class="title-small">Programme du moment</h2>
 
     <div v-if="loading">
       <p class="title-small">Chargement des films…</p>
