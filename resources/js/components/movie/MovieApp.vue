@@ -4,7 +4,7 @@
       <h2 class="title-small">Programme du moment</h2>
 
       <!-- Admin Add Movie Button -->
-      <button v-if="isAdmin" class="btn-add" @click="goAddMovie">
+      <button v-if="isAdmin" class="btn-add2" @click="goAddMovie">
         <i class="fa-solid fa-plus"></i> Ajouter un film
       </button>
     </div>
