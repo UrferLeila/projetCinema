@@ -40,6 +40,8 @@
         color: white !important;
         padding: 12px 14px;
         transition: all 0.3s ease;
+        height: 50;
+
     }
 
     .form-control::placeholder {

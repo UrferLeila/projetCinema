@@ -50,8 +50,8 @@
                     <!-- Form Actions -->
                     <div class="d-flex justify-content-between align-items-center mt-4">
                         @if (Route::has('password.request'))
-                            <a class="login-link small" href="{{ route('password.request') }}">
-                                {{ __('Forgot your password?') }}
+                            <a class="login-link small" href="{{ route('register') }}">
+                                {{ __('Pas de encore compte ?') }}
                             </a>
                         @endif
 

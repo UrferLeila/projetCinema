@@ -54,7 +54,7 @@
                     <!-- Actions -->
                     <div class="d-flex justify-content-between align-items-center mt-4">
                         <a class="register-link" href="{{ route('login') }}">
-                            {{ __('Already registered?') }}
+                            {{ __('vous avez deja un compte ?') }}
                         </a>
 
                         <button type="submit" class="btn-register">
