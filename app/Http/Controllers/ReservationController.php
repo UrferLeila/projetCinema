@@ -19,7 +19,6 @@ class ReservationController extends Controller
 
         $seats = $request->seats;
 
-        // Check if seats are already booked
         $alreadyBooked = ReservationSiege::whereHas('reservation', function ($q) use ($request) {
             $q->where('seance_id', $request->seance_id);
         })->whereIn('siege_nom', $seats)->pluck('siege_nom')->toArray();
@@ -31,16 +30,13 @@ class ReservationController extends Controller
             ], 409);
         }
 
-        // Wrap in transaction
         DB::beginTransaction();
         try {
-            // Create main reservation
             $reservation = Reservation::create([
                 'user_id' => Auth::id(),
                 'seance_id' => $request->seance_id,
             ]);
 
-            // Create individual seat reservations
             foreach ($seats as $seatNom) {
                 ReservationSiege::create([
                     'siege_nom' => $seatNom,

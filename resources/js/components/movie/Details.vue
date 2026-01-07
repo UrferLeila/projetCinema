@@ -78,8 +78,8 @@ export default {
 
         if (response.data.success) {
           alert('Réservation confirmée !');
-          this.$emit('close');               // close modal
-          this.$emit('reservation-made');    // notify parent to refresh seats
+          this.$emit('close');               
+          this.$emit('reservation-made');    
         }
       } catch (error) {
         if (error.response && error.response.status === 409) {

@@ -8,7 +8,6 @@
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    /* Login Card */
     .login-card {
         background: #1f1f1f;
         border-radius: 20px;
@@ -19,7 +18,6 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    /* Titles */
     .login-card h2 {
         font-size: 28px;
         font-weight: bold;
@@ -32,7 +30,6 @@
         margin-bottom: 25px;
     }
 
-    /* Inputs */
     .form-control {
         background: #0a2636 !important;
         border: 1px solid #205281 !important;
@@ -55,14 +52,12 @@
         background: #0a2636;
     }
 
-    /* Labels */
     .form-label,
     .form-check-label {
         color: white !important;
         font-size: 14px;
     }
 
-    /* Checkbox */
     .form-check-input {
         background-color: #0a2636;
         border: 1px solid #205281;
@@ -73,7 +68,6 @@
         border-color: rgb(207, 42, 42);
     }
 
-    /* Login Button */
     .btn-login {
         width: 150;
         padding: 12px;
@@ -91,7 +85,6 @@
         box-shadow: 0 4px 12px rgba(207, 42, 42, 0.5);
     }
 
-    /* Links */
     .login-link {
         color: #3586d1;
         font-size: 14px;

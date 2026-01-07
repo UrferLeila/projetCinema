@@ -48,7 +48,7 @@ class FilmController extends Controller
         return response()->json(['message' => 'Film not found'], 404);
     }
 
-    $film->delete(); // will delete all seances and their reservations automatically
+    $film->delete(); 
 
     return response()->json(['message' => 'Film and all related seances/reservations deleted successfully.']);
 }
