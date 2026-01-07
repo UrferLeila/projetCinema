@@ -26,7 +26,7 @@
         <button
           v-for="(seance, index) in seances"
           :key="index"
-          class="btn"
+          class="btn-blue"
           :class="{ selected: selectedSeance === seance }"
           @click="selectSeance(seance)"
         >

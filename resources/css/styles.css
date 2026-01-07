@@ -647,7 +647,6 @@ h3 {
 }
 
 .form-group input.input:focus {
-    outline: none;
     border-color: #3586d1;
     box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
 }
@@ -682,24 +681,13 @@ h3 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.poster-preview img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.poster-preview img:hover {
-    transform: scale(1.05);
-}
-
 .error-msg {
     color: #ff4d4d;
     text-align: center;
     margin-bottom: 15px;
     font-weight: 500;
 }
-
+ 
 .success-msg {
     color: #00ff62;
     text-align: center;
@@ -973,10 +961,6 @@ h3 {
     transition: transform 0.3s ease;
 }
 
-.edit-movie-page .poster-preview img:hover {
-    transform: scale(1.05);
-}
-
 .edit-movie-page .error-msg {
     color: #ff4d4d;
     text-align: center;
@@ -1183,4 +1167,30 @@ h3 {
     .reservation-item {
         padding: 0.8rem 1rem;
     }
+}
+
+.btn-blue {
+    height: 40px;
+    width: 160px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    background-color: #12599b;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.btn-blue.selected {
+    background-color: white;
+    color: black;
+}
+
+.btn-blue:hover {
+    background-color: #1875cc;
+    transform: scale(1.05);
 }
