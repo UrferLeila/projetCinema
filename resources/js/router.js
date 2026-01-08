@@ -4,6 +4,7 @@ import ReservationApp from './components/movie/ReservationAppSave.vue';
 import FilmEditApp from './components/movie/FilmEditApp.vue';
 import FilmAddApp from './components/movie/FilmAddApp.vue';
 import resevationList from './components/movie/resevationList.vue';
+import dashboard from './components/movie/dashboard.vue';
 
 const routes = [
     {
@@ -34,6 +35,11 @@ const routes = [
         name: 'resevationList',
         component: resevationList,
         props: true,
+    },
+    {
+        path: '/admin/stats/',
+        name: 'dashboard',
+        component: dashboard,
     },
 ];
 
