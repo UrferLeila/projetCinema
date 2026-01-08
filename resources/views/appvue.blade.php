@@ -22,7 +22,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Profile dropdown script -->
     <script>
         const profileBtn = document.getElementById('profileBtn');
         const profileMenu = document.getElementById('profileMenu');
@@ -31,7 +30,6 @@
             profileMenu.style.display = profileMenu.style.display === 'block' ? 'none' : 'block';
         });
 
-        // Close dropdown if clicked outside
         window.addEventListener('click', (e) => {
             if (!profileBtn?.contains(e.target) && !profileMenu?.contains(e.target)) {
                 profileMenu.style.display = 'none';

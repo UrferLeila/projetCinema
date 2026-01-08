@@ -36,7 +36,6 @@
     </div>
 
     <div class="seats-wrapper">
-      <!-- Legend -->
       <div class="legend-container">
         <div class="legend-item">
           <div class="color normal"></div>
@@ -163,7 +162,6 @@ export default {
       this.loadOccupiedSeats(seance.id);
     },
 
-    // Toggle seat selection
     toggleSeat(seat) {
       if (!this.selectedSeance) {
         alert("Veuillez sélectionner une séance avant de choisir un siège.");
@@ -204,7 +202,6 @@ export default {
         window.location.href = "/login";
       }
     },
-
     closeAll() {
       this.showDetails = false;
     },

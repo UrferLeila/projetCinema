@@ -1,7 +1,6 @@
 <template>
   <div class="reservation-cart">
     <h2>Résumé de vos réservations</h2>
-
     <div class="reservation-item" v-for="res in reservations" :key="res.id">
       <div class="movie-info">
         <h3>{{ films[res.seance.film_id] || "Film inconnu" }}</h3>
@@ -9,21 +8,19 @@
           <strong>Date & Heure :</strong> {{ res.seance.date }} à {{ res.seance.heure }}
         </p>
       </div>
-
       <div class="seats-info">
         <p>
           <strong>Places réservées :</strong>
           {{ res.reservation_sieges.map((s) => s.siege_nom).join(", ") }}
         </p>
-
         <p>
-          <strong>Total :</strong> {{ res.total || res.reservation_sieges.length * 10 }} €
+          <strong>Total :</strong>
+          {{ res.total || res.reservation_sieges.length * 10 }} CHF
         </p>
       </div>
     </div>
-
     <div class="cart-total" v-if="reservations.length">
-      <p><strong>Total général :</strong> {{ totalPrice }} €</p>
+      <p><strong>Total général :</strong> {{ totalPrice }} CHF</p>
     </div>
     <p v-else>Vous n'avez aucune réservation.</p>
   </div>
