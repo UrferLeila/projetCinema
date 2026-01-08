@@ -1,8 +1,19 @@
 <template>
   <div class="movie-program">
-    <div class="header">
+    <div class="header" style="position: relative; width: 100%;">
       <h2 class="title-small">Programme du moment</h2>
 
+      <!-- Bouton Statistiques admin -->
+      <button
+        v-if="isAdmin"
+        class="btn-add2"
+        @click="goStats"
+        style="position: absolute; top: 0; right: 0;"
+      >
+        <i class="fa-solid fa-chart-simple"></i> Statistiques
+      </button>
+
+      <!-- Bouton Ajouter un film -->
       <button v-if="isAdmin" class="btn-add2" @click="goAddMovie">
         <i class="fa-solid fa-plus"></i> Ajouter un film
       </button>
@@ -24,13 +35,17 @@
           <span
             v-if="isAdmin"
             class="top-icon-edit"
-            title="Supprimer le film"
+            title="Modifier le film"
             @click="goFilmModif(movie.id)"
           >
             <i class="fa-solid fa-pen"></i>
           </span>
 
-          <span v-if="isAdmin" class="top-icon-delete" @click="deleteFilm(movie.id)">
+          <span
+            v-if="isAdmin"
+            class="top-icon-delete"
+            @click="deleteFilm(movie.id)"
+          >
             <i class="fa-solid fa-trash"></i>
           </span>
         </div>
@@ -88,8 +103,7 @@ export default {
 
       try {
         await axios.delete(`/film/${id}`);
-
-        this.movies = this.movies.filter((movie) => movie.id !== id);
+        this.movies = this.movies.filter(movie => movie.id !== id);
       } catch (err) {
         console.error(err);
         alert("Erreur lors de la suppression du film.");
@@ -106,6 +120,10 @@ export default {
 
     goAddMovie() {
       this.$router.push(`/film/add`);
+    },
+
+    goStats() {
+      this.$router.push(`/admin/stats`); // Adapter selon ta route réelle
     },
   },
 

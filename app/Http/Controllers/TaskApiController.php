@@ -11,7 +11,7 @@ class TaskApiController extends Controller
 
     public function index()
     {
-        $films = Film::all();
+        $films = Film::all(); 
         return response()->json($films, 200);
     }
 

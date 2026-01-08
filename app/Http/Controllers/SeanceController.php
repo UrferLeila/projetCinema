@@ -10,7 +10,7 @@ class SeanceController extends Controller
 {
     public function index()
     {
-        $seances = Seance::with(['film', 'salle'])->get(); // include relationships
+        $seances = Seance::with(['film', 'salle'])->get(); 
         return response()->json($seances, 200);
     }
 

@@ -75,7 +75,7 @@ export default {
         auteur: "",
         image: "",
       },
-      seances: [],
+      seances: [], 
       error: null,
       success: false,
     };
@@ -110,7 +110,7 @@ export default {
 
       try {
         const res = await axios.post("/film/add", this.film);
-        const filmId = res.data.id;
+        const filmId = res.data.id; 
 
         for (let s of this.seances) {
           await axios.post("/seance/add", { ...s, film_id: filmId });

@@ -77,9 +77,9 @@ export default {
         });
 
         if (response.data.success) {
-          alert("Réservation confirmée !");
-          this.$emit("close");
-          this.$emit("reservation-made");
+          alert('Réservation confirmée !');
+          this.$emit('close');               
+          this.$emit('reservation-made');    
         }
       } catch (error) {
         if (error.response && error.response.status === 409) {

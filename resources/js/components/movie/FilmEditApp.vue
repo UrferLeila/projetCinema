@@ -37,11 +37,7 @@
           <p>Aucune séance ajoutée.</p>
         </div>
 
-        <div
-          v-for="(seance, index) in seances"
-          :key="seance.id || index"
-          class="seance-item"
-        >
+        <div v-for="(seance, index) in seances" :key="seance.id || index" class="seance-item">
           <input v-model="seance.date" type="date" class="input" />
           <input v-model="seance.heure" type="time" class="input" />
           <select v-model="seance.salle_id" class="input">
@@ -72,7 +68,7 @@
 import axios from "axios";
 
 export default {
-  props: ["id"],
+  props: ["id"], 
   data() {
     return {
       film: {
@@ -115,35 +111,34 @@ export default {
         return;
       }
 
-      for (let s of this.seances) {
-        if (!s.date || !s.heure || !s.salle_id) {
-          this.error = "Veuillez remplir toutes les informations des séances.";
-          return;
-        }
+  for (let s of this.seances) {
+    if (!s.date || !s.heure || !s.salle_id) {
+      this.error = "Veuillez remplir toutes les informations des séances.";
+      return;
+    }
+  }
+
+  try {
+    await axios.put(`/film/update/${this.id}`, this.film);
+
+    const serverSeanceIds = this.seances.filter(s => s.id).map(s => s.id);
+
+    const { data: existingSeances } = await axios.get(`/film/${this.id}`);
+    const existingIds = existingSeances.seances?.map(s => s.id) || [];
+
+    for (let id of existingIds) {
+      if (!serverSeanceIds.includes(id)) {
+        await axios.delete(`/seance/${id}`);
       }
+    }
 
-      try {
-        // Update film
-        await axios.put(`/film/update/${this.id}`, this.film);
-
-        const serverSeanceIds = this.seances.filter((s) => s.id).map((s) => s.id);
-
-        const { data: existingSeances } = await axios.get(`/film/${this.id}`);
-        const existingIds = existingSeances.seances?.map((s) => s.id) || [];
-
-        for (let id of existingIds) {
-          if (!serverSeanceIds.includes(id)) {
-            await axios.delete(`/seance/${id}`);
-          }
-        }
-
-        for (let s of this.seances) {
-          if (s.id) {
-            await axios.put(`/seance/${s.id}`, s);
-          } else {
-            await axios.post("/seance/add", { ...s, film_id: this.id });
-          }
-        }
+    for (let s of this.seances) {
+      if (s.id) {
+        await axios.put(`/seance/${s.id}`, s); 
+      } else {
+        await axios.post("/seance/add", { ...s, film_id: this.id }); 
+      }
+    }
 
         this.success = true;
         setTimeout(() => {

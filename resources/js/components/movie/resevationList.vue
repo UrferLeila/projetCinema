@@ -35,7 +35,7 @@ export default {
   data() {
     return {
       reservations: [],
-      films: {},
+      films: {}, 
       loading: true,
       error: null,
     };
@@ -63,7 +63,7 @@ export default {
 
         this.films = {};
         filmsArray.forEach((f) => {
-          this.films[f.id] = f.titre;
+          this.films[f.id] = f.titre; 
         });
       } catch (err) {
         this.error = err.message;

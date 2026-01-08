@@ -53,6 +53,11 @@ Route::middleware('auth')->get('/reservations', [ReservationController::class, '
 Route::middleware('auth')->get('/reservations/{id}', [ReservationController::class, 'show']);
 Route::middleware('auth')->delete('/reservations/{id}', [ReservationController::class, 'destroy']);
 
+Route::get('/admin/film-stats', function() {
+    return App\Models\Film::with(['seances.reservations.reservationSieges'])->get();
+});
+
+
 Route::get('reservationSiege/all', [ReservationSiegeController::class, 'index']);
 Route::apiResource('reservationSiege', ReservationSiegeController::class);
 

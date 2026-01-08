@@ -26,7 +26,7 @@
         <button
           v-for="(seance, index) in seances"
           :key="index"
-          class="btn"
+          class="btn-blue"
           :class="{ selected: selectedSeance === seance }"
           @click="selectSeance(seance)"
         >
@@ -36,7 +36,6 @@
     </div>
 
     <div class="seats-wrapper">
-      <!-- Legend -->
       <div class="legend-container">
         <div class="legend-item">
           <div class="color normal"></div>
@@ -118,7 +117,7 @@ export default {
   methods: {
     refreshSeats() {
       this.loadOccupiedSeats(this.selectedSeance.id);
-      this.selectedSeats = [];
+      this.selectedSeats = []; 
     },
 
     formatSeance(seance) {
@@ -163,7 +162,6 @@ export default {
       this.loadOccupiedSeats(seance.id);
     },
 
-    // Toggle seat selection
     toggleSeat(seat) {
       if (!this.selectedSeance) {
         alert("Veuillez sélectionner une séance avant de choisir un siège.");
@@ -173,9 +171,9 @@ export default {
 
       const index = this.selectedSeats.findIndex((s) => s.nom === seat.nom);
       if (index !== -1) {
-        this.selectedSeats.splice(index, 1);
+        this.selectedSeats.splice(index, 1); 
       } else {
-        this.selectedSeats.push(seat);
+        this.selectedSeats.push(seat); 
       }
     },
 
